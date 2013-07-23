@@ -24,5 +24,10 @@ php ejemploCancelacion.php
 
 ```
 
+## Ejemplo de uso
+Si tiene alguna duda sobre la implementación de está clase, puede contactarnos a: 
+
+desarrollo@facturacionmoderna.com 
+
 [1]: http://www.facturacionmoderna.com
 
