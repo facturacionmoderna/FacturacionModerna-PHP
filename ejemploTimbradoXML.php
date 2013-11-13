@@ -96,7 +96,7 @@ function pruebaTimbrado(){
     echo "Timbrado exitoso\n";
     
   }else{
-    echo "[".$client->ultimoCodigoError."] - ".$client->ultimoError."\n";
+    echo "[".$cliente->ultimoCodigoError."] - ".$cliente->ultimoError."\n";
   }    
 }
 
