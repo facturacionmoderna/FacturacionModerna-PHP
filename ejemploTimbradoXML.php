@@ -84,11 +84,11 @@ function pruebaTimbrado(){
       echo "XML almacenado correctamente en $comprobante.xml\n";        
       file_put_contents($comprobante.".xml", $cliente->xml);
     }
-    if($cliente->pdf){
+    if(isset($cliente->pdf)){
       echo "PDF almacenado correctamente en $comprobante.pdf\n";
       file_put_contents($comprobante.".pdf", $cliente->pdf);
     }
-    if($cliente->png){
+    if(isset($cliente->png)){
       echo "CBB en formato PNG almacenado correctamente en $comprobante.png\n";
       file_put_contents($comprobante.".png", $cliente->png);
     }

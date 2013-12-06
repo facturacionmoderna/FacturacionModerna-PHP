@@ -35,6 +35,7 @@ function pruebaCancelacion(){
 
   /*Cambiar este valor por el UUID que se desea cancelar*/
   $uuid = "3F938316-7E5E-4EE4-9D38-A8C3023120C9";
+  $opciones=null;
   
   if($cliente->cancelar($uuid, $opciones)){
     echo "Cancelación exitosa\n";
