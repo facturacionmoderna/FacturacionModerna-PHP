@@ -13,14 +13,16 @@ Clase Genérica para realizar el timbrado y cancelación de un CFDI con [Factura
 ## Preparaciones
 * Dar permisos de escritura a la carpeta comprobantes:
 ```
-  chmod -R 777 comprobantes
-  ```
+chmod -R 777 comprobantes
+```
+
 * Instalar libreria para procesamiento de archivos XSLT
 ```
-  apt-get install php5-xsl
-  #recargar apache
-  /etc/init.d/apache2 reload
+apt-get install php5-xsl
+#recargar apache
+/etc/init.d/apache2 reload
 ```
+
 ## Ejemplos de uso
 
 Ejecución utilizando el interprete PHP
