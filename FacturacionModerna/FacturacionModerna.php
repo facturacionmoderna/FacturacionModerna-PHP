@@ -6,7 +6,7 @@
 * Facturación Moderna :  (http://www.facturacionmoderna.com)
 * @author Edgar Durán <edgar.duran@facturacionmoderna.com>
 * @package FacturacionModerna
-* @version 1.2
+* @version 1.3
 * @see http://developers.facturacionmoderna.com
 **/
 
@@ -174,6 +174,51 @@ class FacturacionModerna {
     return false; 
   }
 
+/**
+  * Ejecuta el método SOAP activarCancelacion() del Servicio Web de
+  * Facturacion Moderna públicado en FacturacionModerna::url
+  * http://developers.facturacionmoderna.com/#activarCancelacion
+  * 
+  * Recibe los archivos Cer, Key y Contraseña para activar el servicio de cancelación de CFDIS por medio de FM hacia servicios del SAT. 
+  *
+  * @param string $archCer Contenido o Rutá del archivo Cer del CSD a activar.
+  * @param string $archKey Contenido o Rutá del archivo Key del CSD a activar.
+  * @param string $passKey Contraseña del archivo Key del CSD a activar.
+  * @return boolean 
+  */
+  public function activarCancelacion($archCer=null,$archKey=null,$passKey){
+    try {
+      //Si $archCer y/o $archKey son rutas de archivos, cargarlos
+      if(file_exists($archCer)){
+        $archCer = file_get_contents($archCer);
+      }
+      if(file_exists($archKey)){
+        $archKey = file_get_contents($archKey);
+      }
+      $opciones=array();
+      //Códificar los archivos a utilizar en Base64      
+      $opciones['archivoKey'] = base64_encode($archKey);
+      $opciones['archivoCer'] = base64_encode($archCer);
+      $opciones['clave'] = $passKey;
+      $opciones = array_merge($opciones, $this->opciones);
+
+      $cliente = new SoapClient($this->url, array('trace' => 1));          
+      $respuesta = $cliente->activarCancelacion((object) $opciones);      
+      return true;
+    }catch (SoapFault $e){      
+      if($this->debug == 1){
+        $this->log("SOAP request:\t".$cliente->__getLastRequest());
+        $this->log("SOAP response:\t".$cliente->__getLastResponse());
+      }
+      $this->ultimoError = $e->faultstring;
+      $this->ultimoCodigoError = $e->faultcode;      
+    }catch (Exception $e){
+      $this->ultimoError = $e->getMessage();
+      $this->ultimoCodigoError = "Unknown";
+    }
+    return false; 
+  }  
+  
   /**
   * Registra los mensajes SOAP en el archivo FacturacionModerna::log, si el
   * archivo no existe lo crea.
