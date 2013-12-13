@@ -5,167 +5,113 @@
   <!-- Manejador de nodos tipo nomina -->
   <xsl:template match="nomina:Nomina">
 
-  <xsl:choose>
-	  <xsl:when test="./@Version='1.0'">
-		  <!--Iniciamos el tratamiento de los atributos de Nómina -->
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./@Version"/> 
-			  </xsl:call-template>
-			
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./@RegistroPatronal"/>
-			  </xsl:call-template>
-	
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./@NumEmpleado"/>
-			  </xsl:call-template>
-			
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./@CURP"/>
-			  </xsl:call-template>
-	
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./@TipoRegimen"/>
-			  </xsl:call-template>
-			
-			  <xsl:call-template name="Opcional">
-				  <xsl:with-param name="valor" select="./@NumSeguridadSocial"/>
-			  </xsl:call-template>
-			
-			  <xsl:call-template name="Opcional">
-				  <xsl:with-param name="valor" select="./@CLABE"/>
-			  </xsl:call-template>
-			
-					  <xsl:call-template name="Opcional">
-				  <xsl:with-param name="valor" select="./@Banco"/>
-			  </xsl:call-template>
-	
-			  <!--Iniciamos el tratamiento de los atributos de Ingresos -->
-			
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./nomina:Ingresos/@TotalGravado"/>
-			  </xsl:call-template>
-			
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./nomina:Ingresos/@TotalExento"/>
-			  </xsl:call-template>		
-		
-			  <!--Iniciamos el tratamiento de los atributos de descuentos -->	
-		
-			  <xsl:call-template name="Requerido">
-				  <xsl:with-param name="valor" select="./nomina:Descuentos/@Total"/>
-			  </xsl:call-template>		
-	  </xsl:when>
-	  <xsl:when test="./@Version='1.1'">
-	      <!--Iniciamos el tratamiento de los atributos de Nómina -->
+    <!--Iniciamos el tratamiento de los atributos de Nómina -->
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@Version"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@Version"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@RegistroPatronal"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@RegistroPatronal"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@NumEmpleado"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@NumEmpleado"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@CURP"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@CURP"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@TipoRegimen"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@TipoRegimen"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@NumSeguridadSocial"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@NumSeguridadSocial"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@FechaPago"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@FechaPago"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@FechaInicialPago"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@FechaInicialPago"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@FechaFinalPago"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@FechaFinalPago"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@NumDiasPagados"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@NumDiasPagados"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Opcional">
-        <xsl:with-param name="valor" select="./@Departamento"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@Departamento"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Opcional">
-        <xsl:with-param name="valor" select="./@CLABE"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@CLABE"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Opcional">
-        <xsl:with-param name="valor" select="./@Banco"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@Banco"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@FechaInicioRelLaboral"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@FechaInicioRelLaboral"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@Antiguedad"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@Antiguedad"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@Puesto"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@Puesto"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@TipoContrato"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@TipoContrato"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@TipoJornada"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@TipoJornada"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@PeriodicidadPago"/>
-      </xsl:call-template>
+    <xsl:call-template name="Requerido">
+      <xsl:with-param name="valor" select="./@PeriodicidadPago"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@SalarioBaseCotApor"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@SalarioBaseCotApor"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@RiesgoPuesto"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@RiesgoPuesto"/>
+    </xsl:call-template>
 
-      <xsl:call-template name="Requerido">
-        <xsl:with-param name="valor" select="./@SalarioDiarioIntegrado"/>
-      </xsl:call-template>
+    <xsl:call-template name="Opcional">
+      <xsl:with-param name="valor" select="./@SalarioDiarioIntegrado"/>
+    </xsl:call-template>
 
-      <!--Iniciamos el tratamiento de los elementos de Nómina -->
+    <!--Iniciamos el tratamiento de los elementos de Nómina -->
 
-      <xsl:if test="./nomina:Percepciones">
-        <xsl:apply-templates select="./nomina:Percepciones"/>
-      </xsl:if>
+    <xsl:if test="./nomina:Percepciones">
+      <xsl:apply-templates select="./nomina:Percepciones"/>
+    </xsl:if>
     
-      <xsl:if test="./nomina:Deducciones">
-        <xsl:apply-templates select="./nomina:Deducciones"/>
-      </xsl:if>
+    <xsl:if test="./nomina:Deducciones">
+      <xsl:apply-templates select="./nomina:Deducciones"/>
+    </xsl:if>
     
-      <xsl:for-each select="./nomina:Incapacidad">
-        <xsl:apply-templates select="."/>
-      </xsl:for-each>
+    <xsl:for-each select="./nomina:Incapacidades">
+      <xsl:apply-templates select="."/>
+    </xsl:for-each>
     
-      <xsl:for-each select="./nomina:HorasExtra">
-        <xsl:apply-templates select="."/>
-      </xsl:for-each>
-	  </xsl:when>
-  </xsl:choose>
+    <xsl:for-each select="./nomina:HorasExtras">
+      <xsl:apply-templates select="."/>
+    </xsl:for-each>
 
   </xsl:template>
 
@@ -261,6 +207,16 @@
 
   </xsl:template>
 
+  <xsl:template match="nomina:Incapacidades">
+
+    <!--Iniciamos el tratamiento del los elementos de Incapacidades-->
+
+    <xsl:for-each select="./nomina:Incapacidad">
+      <xsl:apply-templates select="."/>
+    </xsl:for-each>
+
+  </xsl:template>
+
   <xsl:template match="nomina:Incapacidad">
 
     <!--Iniciamos el tratamiento de los atributos de Incapacidad -->
@@ -276,6 +232,16 @@
     <xsl:call-template name="Requerido">
       <xsl:with-param name="valor" select="./@Descuento"/>
     </xsl:call-template>
+  </xsl:template>
+
+    <xsl:template match="nomina:HorasExtras">
+
+    <!--Iniciamos el tratamiento del los elementos de HorasExtras-->
+
+    <xsl:for-each select="./nomina:HorasExtra">
+      <xsl:apply-templates select="."/>
+    </xsl:for-each>
+
   </xsl:template>
 
   <xsl:template match="nomina:HorasExtra">
