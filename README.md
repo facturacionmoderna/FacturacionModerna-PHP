@@ -4,7 +4,7 @@ Clase Genérica para realizar el timbrado y cancelación de un CFDI con [Factura
 
 
 ## Carácteristicas
-
+* Soporte para el timbrado de diversos [tipos de documento (Factura, Nota de Crédito, Recibo de Nómina)][2] 
 * Clase genérica lista para ser implementada en tu proyecto.
 * Timbrado de XML CFDI versión 3.2 
 * Timbrado de un archivo de texto simple
@@ -77,4 +77,5 @@ Si tiene alguna duda sobre la implementación de está clase, puede contactarnos
 desarrollo@facturacionmoderna.com 
 
 [1]: http://www.facturacionmoderna.com
+[2]: https://github.com/facturacionmoderna/Comprobantes
 
