@@ -128,7 +128,12 @@ function sellarXML($cfdi, $numero_certificado, $archivo_cer, $archivo_pem){
 function generarXML($rfc_emisor){
 
   $fecha_actual = substr( date('c'), 0, 19);
-  
+  /*
+    Puedes encontrar más ejemplos y documentación sobre estos archivos aquí. (Factura, Nota de Crédito, Recibo de Nómina y más...)
+    Link: https://github.com/facturacionmoderna/Comprobantes
+    Nota: Si deseas información adicional contactanos en www.facturacionmoderna.com
+ */
+
   $cfdi = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <cfdi:Comprobante xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="3.2" fecha="$fecha_actual" tipoDeComprobante="ingreso" noCertificado="" certificado="" sello="" formaDePago="Pago en una sola exhibición" metodoDePago="Transferencia Electrónica" NumCtaPago="No identificado" LugarExpedicion="San Pedro Garza García, Mty." subTotal="10.00" total="11.60">

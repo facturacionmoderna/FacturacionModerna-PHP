@@ -98,7 +98,13 @@ function pruebaTimbrado(){
 function generarLayout($rfc_emisor){
 
   $fecha_actual = substr( date('c'), 0, 19);
-  
+
+  /*
+    Puedes encontrar más ejemplos y documentación sobre estos archivos aquí. (Factura, Nota de Crédito, Recibo de Nómina y más...)
+    Link: https://github.com/facturacionmoderna/Comprobantes
+    Nota: Si deseas información adicional contactanos en www.facturacionmoderna.com
+ */
+
   $cfdi = <<<LAYOUT
 [Encabezado]
 
