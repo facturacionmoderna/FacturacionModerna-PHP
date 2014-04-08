@@ -1,5 +1,7 @@
 <?php
 
+ini_set("soap.wsdl_cache_enabled", 1);
+
 /**
 * Descripción: Clase Genérica para realizar el timbrado y cancelación de un CFDI con Facturación Moderna.
 * 
