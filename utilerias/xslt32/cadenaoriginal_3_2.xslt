@@ -19,6 +19,7 @@
                 xmlns:leyendasFisc="http://www.sat.gob.mx/leyendasFiscales"
                 xmlns:spei="http://www.sat.gob.mx/spei"
                 xmlns:nomina="http://www.sat.gob.mx/nomina"
+                xmlns:nomina12="http://www.sat.gob.mx/nomina12"
                 xmlns:registrofiscal="http://www.sat.gob.mx/registrofiscal"
                 xmlns:pagoenespecie="http://www.sat.gob.mx/pagoenespecie"
                 xmlns:consumodecombustibles="http://www.sat.gob.mx/consumodecombustibles"
@@ -61,6 +62,7 @@
 	<xsl:include href="leyendasFisc.xslt"/>
 	<xsl:include href="spei.xslt"/>
 	<xsl:include href="nomina11.xslt"/>
+	<xsl:include href="nomina12.xslt"/>
   <xsl:include href="cfdiregistrofiscal.xslt"/>
   <xsl:include href="pagoenespecie.xslt"/>
   <xsl:include href="consumodecombustibles.xslt"/>

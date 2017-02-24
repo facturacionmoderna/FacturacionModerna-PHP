@@ -30,13 +30,13 @@ function pruebaTimbrado(){
   $debug = 1;
   
   //RFC utilizado para el ambiente de pruebas
-  $rfc_emisor = "ESI920427886";
+  $rfc_emisor = "TCM970625MB1";
   
   //Archivos del CSD de prueba proporcionados por el SAT.
   //ver http://developers.facturacionmoderna.com/webroot/CertificadosDemo-FacturacionModerna.zip
-  $numero_certificado = "20001000000200000192";
-  $archivo_cer = "utilerias/certificados/20001000000200000192.cer";
-  $archivo_pem = "utilerias/certificados/20001000000200000192.key.pem";
+  $numero_certificado = "20001000000300022762";
+  $archivo_cer = "utilerias/certificados/20001000000300022762.cer";
+  $archivo_pem = "utilerias/certificados/20001000000300022762.key.pem";
   
     
   //Datos de acceso al ambiente de pruebas
