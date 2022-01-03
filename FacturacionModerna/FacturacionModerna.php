@@ -153,10 +153,11 @@ class FacturacionModerna {
   *
   */
   
-  public function cancelar($uuid){
+  public function cancelar($uuid, $opciones){
     try{
       $cliente = new SoapClient($this->url, array('trace' => 1));      
       $opciones['uuid'] = (string) $uuid;
+      
       $opciones = array_merge($opciones, $this->opciones);
       $respuesta = $cliente->requestCancelarCFDI((object) $opciones);
       return true;
