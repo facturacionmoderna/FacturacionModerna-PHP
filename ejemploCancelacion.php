@@ -35,7 +35,7 @@ function pruebaCancelacion(){
 
   /*Cambiar este valor por el UUID que se desea cancelar*/
   $uuid = "3F938316-7E5E-4EE4-9D38-A8C3023120C9";
-  /* Nuevos Parametros Cancelacion 2021 */
+  /* Nuevos Parametros Cancelacion 2022 */
   //$opciones = array('Motivo' => '02');
   $opciones = array('Motivo' => '01', 'FolioSustitucion' => '3F938316-7E5E-4EE4-9D38-A8C300000000');
   
